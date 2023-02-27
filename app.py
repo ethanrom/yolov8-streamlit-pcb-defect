@@ -24,9 +24,9 @@ def show_preds_image(image):
         )
     return cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-st.set_page_config(page_title="PCB Defect Detector")
+st.set_page_config(page_title="YOLOv8 PCB Defect Detector")
 
-st.title("PCB Defect Detector")
+st.title("YOLOv8 PCB Defect Detector")
 
 image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
