@@ -10,7 +10,7 @@ from ultralytics import YOLO
 model = YOLO('yolov8_pcb.pt')
 
 def show_preds_image(image):
-    image = cv2.imread(image)
+    image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
     outputs = model.predict(source=image)
     results = outputs[0].cpu().numpy()
     for i, det in enumerate(results.boxes.xyxy):
