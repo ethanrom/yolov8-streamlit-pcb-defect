@@ -31,5 +31,6 @@ st.title("PCB Defect Detector")
 image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
 if image is not None:
-    output_image = show_preds_image(image)
+    img = np.array(Image.open(image))
+    output_image = show_preds_image(img)
     st.image(output_image, caption="Output Image", use_column_width=True)
