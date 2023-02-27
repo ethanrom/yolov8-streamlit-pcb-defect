@@ -2,6 +2,7 @@ import cv2
 import requests
 import os
 import streamlit as st
+import numpy as np
 from PIL import Image
 
 from ultralytics import YOLO
