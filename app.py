@@ -5,28 +5,6 @@ import os
 
 from ultralytics import YOLO
 
-file_urls = [
-    #'https://www.dropbox.com/s/b5gqwe97xo9adw/spur.jpg?dl=1',
-]
-
-def download_file(url, save_name):
-    url = url
-    if not os.path.exists(save_name):
-        file = requests.get(url)
-        open(save_name, 'wb').write(file.content)
-
-for i, url in enumerate(file_urls):
-    if 'mp4' in file_urls[i]:
-        download_file(
-            file_urls[i],
-            f"video.mp4"
-        )
-    else:
-        download_file(
-            file_urls[i],
-            f"image_{i}.jpg"
-        )
-
 model = YOLO('yolov8_pcb.pt')
 path = [['spur.jpg'], ['mouse.jpg']]
 
