@@ -9,9 +9,9 @@ from ultralytics import YOLO
 
 model = YOLO('yolov8_pcb.pt')
 
-def show_preds_image(image):
-    image = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
-    outputs = model.predict(source=image)
+def show_preds_image(image_path):
+    image = cv2.imread(image_path)
+    outputs = model.predict(source=image_path)
     results = outputs[0].cpu().numpy()
     for i, det in enumerate(results.boxes.xyxy):
         cv2.rectangle(
